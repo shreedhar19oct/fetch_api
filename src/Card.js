@@ -5,7 +5,7 @@ import ReadMoreReadLess from './Readmoreless';
 function Card() {
     const [user,setUser] = useState([]);
 
-    const [readless,readmore] = useState(0);
+    const [readless,readmore] = useState(1);
     console.log(readless);
 
     const fetchData =()=>{
@@ -31,26 +31,19 @@ function Card() {
         <>
         <div className='card'>
             <h2>Name: {data.name.first+" "+data.name.last}</h2>
-            <p>City: {data.location.city}</p> 
-            <p>State: {data.location.state}</p>
+            
             <p>Country: {data.location.country}</p>
             <div className='card-button'>
-            <button type="button" onClick={() => readmore(1)}>Read More</button>
+            {/* <button type="button" onClick={() => readmore(1)}>Read More</button> */}
             {
                 readless===1? <ReadMoreReadLess>
-                <p>Gender: {data.gender}</p> 
-                <p>PostCode: {data.postcode}</p>
-                <p>Email: {data.email}</p>
-                <p>Username: {data.username}</p>
-                <p>Password: {data.password}</p>
-                <p>Contact Details: {data.phone}</p>
-                <p>Location: {data.location.street+" "+data.location.name}</p>
+                <h4>Gender: {data.gender} </h4> 
+                <h4>Email: {data.email} </h4>
+                <h4>Age: {data.dob.age} </h4>
+                <h4>Contact Details: {data.phone} </h4>
+                <h4>Location: {data.location.city + ", " + data.location.state}</h4> 
                 </ReadMoreReadLess> : null 
             }
-                {/* <ReadMoreReadLess limit={10}>
-                    Loerem50
-                    abjvajhbdhfbwkbkjbkjb
-                </ReadMoreReadLess> */}
             </div>   
         </div>
         </>

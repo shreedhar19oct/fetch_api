@@ -12,7 +12,7 @@ const ReadMoreReadLess = ({limit,children}) => {
 
     return (
         <div className="read-more-read-less">
-            {isReadMoreShown ? text: `${text.substring(0, 10)}`}
+            {isReadMoreShown ? text: null}
             <button className="btn" onClick={toggleBtn}> {isReadMoreShown ? 'Read Less' : '...Read More'}</button>
         </div>
     )
