@@ -5,6 +5,9 @@ import ReadMoreReadLess from './Readmoreless';
 function Card() {
     const [user,setUser] = useState([]);
 
+    const [readless,readmore] = useState(0);
+    console.log(readless);
+
     const fetchData =()=>{
         fetch("https://randomuser.me/api/?nat=us&results=10&page=1")
         .then((response) =>{
@@ -23,6 +26,7 @@ function Card() {
     <>
     <h2>Welcome to User details Website</h2>
     <div className='stories-div'>
+    
     {user.map(data =>(
         <>
         <div className='card'>
@@ -32,10 +36,11 @@ function Card() {
             <p>Country: {data.location.country}</p>
             <p>Contact Details: {data.phone}</p>
             <div className='card-button'>
-                <ReadMoreReadLess limit={10}>
+            <button type="button" onClick={() => readmore(1)}>Read More</button>
+                {/* <ReadMoreReadLess limit={10}>
                     Loerem50
                     abjvajhbdhfbwkbkjbkjb
-                </ReadMoreReadLess>
+                </ReadMoreReadLess> */}
             </div>   
         </div>
         </>
@@ -43,6 +48,7 @@ function Card() {
     </div>
     </>
     )
+    console.log(readless);
 }
 
 export default Card
