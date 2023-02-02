@@ -34,9 +34,19 @@ function Card() {
             <p>City: {data.location.city}</p> 
             <p>State: {data.location.state}</p>
             <p>Country: {data.location.country}</p>
-            <p>Contact Details: {data.phone}</p>
             <div className='card-button'>
             <button type="button" onClick={() => readmore(1)}>Read More</button>
+            {
+                readless===1? <ReadMoreReadLess>
+                <p>Gender: {data.gender}</p> 
+                <p>PostCode: {data.postcode}</p>
+                <p>Email: {data.email}</p>
+                <p>Username: {data.username}</p>
+                <p>Password: {data.password}</p>
+                <p>Contact Details: {data.phone}</p>
+                <p>Location: {data.location.street+" "+data.location.name}</p>
+                </ReadMoreReadLess> : null 
+            }
                 {/* <ReadMoreReadLess limit={10}>
                     Loerem50
                     abjvajhbdhfbwkbkjbkjb
