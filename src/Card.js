@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import "./App.css";
+import ReadMoreReadLess from './Readmoreless';
 
 function Card() {
     const [user,setUser] = useState([]);
@@ -31,7 +32,10 @@ function Card() {
             <p>Country: {data.location.country}</p>
             <p>Contact Details: {data.phone}</p>
             <div className='card-button'>
-                <a href="./moredetails.js">Read More</a>
+                <ReadMoreReadLess limit={10}>
+                    Loerem50
+                    abjvajhbdhfbwkbkjbkjb
+                </ReadMoreReadLess>
             </div>   
         </div>
         </>
